@@ -1,0 +1,36 @@
+{
+  "name": "zelda",
+  "tile_families": {
+    "cave": {
+      "name": "cave",
+      "filename": "cave.png",
+      "tile_size": {
+        "height": 16,
+        "width": 16
+      },
+      "sprites": {
+        "floor": {
+          "name": "floor",
+          "position": {
+            "x": 7,
+            "y": 3
+          }
+        },
+        "floor_top": {
+          "name": "floor_top",
+          "position": {
+            "x": 12,
+            "y": 6
+          }
+        },
+        "floor_bottom": {
+          "name": "floor_bottom",
+          "position": {
+            "x": 12,
+            "y": 4
+          }
+        }
+      }
+    }
+  }
+}
