@@ -25,9 +25,9 @@ define (function(require){
     }).then(function (response) {
         var tiles = response;
         tileset.tiles = tiles;
-        for (var i in response.tile_families) {
-            var family = response.tile_families[i];
+        tileset.nbToLoad = Object.keys(response.tile_families).length;
 
+        function loadFamily(family) {
             fabric.Image.fromURL('tiles/zelda/sprites/' + family.filename, function (caveImg) {
 
                 // temp canvas to generate planet images
@@ -58,8 +58,8 @@ define (function(require){
                     img.src = tempCanvas.toDataURL();
                     sprite.image = new fabric.Image(img, {
 
-                        width: 32,
-                        height: 32,
+                        width: family.tile_size.width * 2,
+                        height: family.tile_size.height * 2,
 
                         name: sprite.name,
                         index: 0,
@@ -70,13 +70,19 @@ define (function(require){
                         hasControls: false
                     });
                 }
-                tiles.loaded = true;
+
+                tileset.nbToLoad -= 1;
+                tiles.loaded = (tileset.nbToLoad == 0);
                 console.info(tiles);
-                if(promiseReady) {
+                if (tiles.loaded && promiseReady) {
                     promiseReady();
                 }
 
             });
+        }
+
+        for (var i in response.tile_families) {
+            loadFamily(response.tile_families[i]);
         }
     });
     return tileset;

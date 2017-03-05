@@ -5,6 +5,7 @@
 define(function (require) {
     var tileset = require('./tileset');
     var fabric = require('fabric');
+    // var engine = require('engine');
 
     var canvas = new fabric.Canvas('canvas', {
         hoverCursor: 'pointer',
@@ -20,29 +21,41 @@ define(function (require) {
                     var family = "cave";
                     var name = "floor";
                     if ( j == 0 ) {
-                        name = "floor_top";
+                        name += "_top";
                     }
                     if ( j == 14 ) {
-                        name = "floor_bottom";
+                        name += "_bottom";
+                    }
+                    if ( i == 0 ) {
+                        name += "_left";
+                    }
+                    if ( i == 19 ) {
+                        name += "_right";
                     }
                     var tile = tileset.get(family, name);
-                    tile.set({ left: i * 32, top: j* 32 }).setCoords();
+                    tile.set({ left: i * 32, top: j * 32 }).setCoords();
                     canvas.add(tile);
                 }
             }
-            var orbit = new fabric.Circle({
-                radius: 15,
-                left: canvas.getWidth() / 2,
-                top: canvas.getHeight() / 2,
-                fill: 'rgba(0,192,255,1)',
-                stroke: 'rgba(0,192,255,1)',
-                hasBorders: true,
-                hasControls: false,
-                lockMovementX: true,
-                lockMovementY: true,
-                index: 100
-            });
-            canvas.add(orbit);
+            var hero_down = tileset.get("hero", "down");
+            var hero_up = tileset.get("hero", "up");
+            var hero_left = tileset.get("hero", "left");
+            var hero_right = tileset.get("hero", "right");
+            var left = canvas.getWidth() / 2;
+            var top = canvas.getHeight() / 2;
+            var hero = hero_down;
+
+            function setHero(image, l, t) {
+                canvas.remove(hero);
+                hero = image;
+                hero.set({
+                    left: l,
+                    top: t
+                });
+                canvas.add(hero);
+            }
+
+            setHero(hero_down, left, top);
             document.onkeydown = checkKey;
 
             function checkKey(e) {
@@ -50,19 +63,23 @@ define(function (require) {
                 e = e || window.event;
 
                 if (e.keyCode == '38') {
-                    orbit.top -= 16;
+                    top -= 16;
+                    setHero(hero_up, left, top);
                     e.preventDefault();
                 }
                 else if (e.keyCode == '40') {
-                    orbit.top += 16;
+                    top += 16;
+                    setHero(hero_down, left, top);
                     e.preventDefault();
                 }
                 else if (e.keyCode == '37') {
-                    orbit.left -= 16;
+                    left -= 16;
+                    setHero(hero_left, left, top);
                     e.preventDefault();
                 }
                 else if (e.keyCode == '39') {
-                    orbit.left += 16;
+                    left += 16;
+                    setHero(hero_right, left, top);
                     e.preventDefault();
                 }
                 canvas.renderAll();

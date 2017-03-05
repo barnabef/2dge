@@ -2,7 +2,6 @@
   "name": "zelda",
   "tile_families": {
     "cave": {
-      "name": "cave",
       "filename": "cave.png",
       "tile_size": {
         "height": 16,
@@ -10,24 +9,138 @@
       },
       "sprites": {
         "floor": {
-          "name": "floor",
           "position": {
             "x": 7,
             "y": 3
           }
         },
         "floor_top": {
-          "name": "floor_top",
+          "position": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        "floor_bottom": {
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        },
+        "floor_right": {
+          "position": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "floor_left": {
+          "position": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        "floor_top_right": {
+          "position": {
+            "x": 5,
+            "y": 0
+          }
+        },
+        "floor_bottom_right": {
+          "position": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        "floor_top_left": {
+          "position": {
+            "x": 4,
+            "y": 0
+          }
+        },
+        "floor_bottom_left": {
+          "position": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        "pit_top": {
           "position": {
             "x": 12,
             "y": 6
           }
         },
-        "floor_bottom": {
-          "name": "floor_bottom",
+        "pit_bottom": {
           "position": {
             "x": 12,
             "y": 4
+          }
+        },
+        "pit_right": {
+          "position": {
+            "x": 11,
+            "y": 5
+          }
+        },
+        "pit_left": {
+          "position": {
+            "x": 13,
+            "y": 5
+          }
+        },
+        "pit_top_right": {
+          "position": {
+            "x": 15,
+            "y": 4
+          }
+        },
+        "pit_bottom_right": {
+          "position": {
+            "x": 15,
+            "y": 5
+          }
+        },
+        "pit_top_left": {
+          "position": {
+            "x": 14,
+            "y": 4
+          }
+        },
+        "pit_bottom_left": {
+          "position": {
+            "x": 14,
+            "y": 5
+          }
+        }
+      }
+    },
+    "hero" : {
+      "filename": "character.png",
+      "tile_size": {
+        "height": 32,
+        "width": 16
+      },
+      "sprites": {
+        "down": {
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "up": {
+          "position": {
+            "x": 0,
+            "y": 2
+          }
+        },
+        "left": {
+          "position": {
+            "x": 0,
+            "y": 3
+          }
+        },
+        "right": {
+          "position": {
+            "x": 0,
+            "y": 1
           }
         }
       }
