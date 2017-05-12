@@ -10,7 +10,8 @@ requirejs.config({
     baseUrl: 'lib',
     paths: {
         app: '../javascripts/app',
-        fabric: 'fabric/dist/fabric.require'
+        fabric: 'fabric/dist/fabric.require',
+        jquery: 'jquery/dist/jquery'
     }
 });
 

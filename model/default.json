@@ -1,0 +1,92 @@
+{
+  "def" : [
+    {
+      "x" : 1,
+      "width" : 18,
+      "y" : 1,
+      "height" : 13,
+      "tile" : "floor",
+      "walkable" : true
+    },
+    {
+      "x" : 1,
+      "width" : 18,
+      "y" : 0,
+      "height" : 1,
+      "tile" : "floor_top",
+      "walkable" : false
+    },
+    {
+      "x" : 1,
+      "width" : 18,
+      "y" : 14,
+      "height" : 1,
+      "tile" : "floor_bottom",
+      "walkable" : false
+    },
+    {
+      "x" : 0,
+      "width" : 1,
+      "y" : 1,
+      "height" : 13,
+      "tile" : "floor_left",
+      "walkable" : false
+    },
+    {
+      "x" : 19,
+      "width" : 1,
+      "y" : 1,
+      "height" : 13,
+      "tile" : "floor_right",
+      "walkable" : false
+    },
+    {
+      "x" : 0,
+      "y" : 0,
+      "tile" : "floor_top_left",
+      "walkable" : false
+    },
+    {
+      "x" : 19,
+      "y" : 0,
+      "tile" : "floor_top_right",
+      "walkable" : false
+    },
+    {
+      "x" : 0,
+      "y" : 14,
+      "tile" : "floor_bottom_left",
+      "walkable" : false
+    },
+    {
+      "x" : 19,
+      "y" : 14,
+      "tile" : "floor_bottom_right",
+      "walkable" : false
+    },
+    {
+      "x" : 8,
+      "y" : 8,
+      "tile" : "pit_top_left",
+      "walkable" : false
+    },
+    {
+      "x" : 7,
+      "y" : 8,
+      "tile" : "pit_top_right",
+      "walkable" : false
+    },
+    {
+      "x" : 8,
+      "y" : 7,
+      "tile" : "pit_bottom_left",
+      "walkable" : false
+    },
+    {
+      "x" : 7,
+      "y" : 7,
+      "tile" : "pit_bottom_right",
+      "walkable" : false
+    }
+  ]
+}

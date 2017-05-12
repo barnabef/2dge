@@ -53,7 +53,6 @@ define (function(require){
                     caveImg.top = -family.tile_size.height * sprite.position.y;
                     caveImg.setCoords();
                     tempCanvas.renderAll();
-                    // get data url for that planet
                     var img = new Image;
                     img.src = tempCanvas.toDataURL();
                     sprite.image = new fabric.Image(img, {
@@ -67,7 +66,8 @@ define (function(require){
                         top: 0,
                         // remove borders and corners but leaving object available for events
                         hasBorders: false,
-                        hasControls: false
+                        hasControls: false,
+                        evented: false
                     });
                 }
 
